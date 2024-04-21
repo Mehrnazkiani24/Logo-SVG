@@ -1,0 +1,17 @@
+{
+  "name": "logo-svg",
+  "version": "1.0.0",
+  "description": "I will be generating logos for project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Mehrnaz Kiani",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
