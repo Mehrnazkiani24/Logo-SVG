@@ -1,6 +1,6 @@
 class Shape{
     constructor(color){
-        this.shapecolor = this.color
+        this.shapecolor = color
     }
 
 }
