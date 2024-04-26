@@ -15,62 +15,62 @@ function init() {
             type: "list",
             message: "Please enter textColor",
             name: "textColor",
-            choices:["Blue","Black","White","Green","Purple","Yellow","Grey"]
+            choices: ["Blue", "Black", "White", "Green", "Purple", "Yellow", "Grey"]
         },
 
         {
             type: "list",
             message: "Please select shape",
             name: "logoshape",
-            choices:["Circle","Square","Triangle"]
+            choices: ["Circle", "Square", "Triangle"]
         },
         {
             type: "list",
             message: "Please enter shapeColor",
             name: "shapeColor",
-            choices:["Blue","Black","White","Green","Purple","Yellow","Grey"]
+            choices: ["Blue", "Black", "White", "Green", "Purple", "Yellow", "Grey"]
 
         }
     ]).then(response => {
         let userShape;
         let shapeRender;
-        switch(response.logoshape){
+        switch (response.logoshape) {
             case "Circle":
                 userShape = new Circle(response.shapeColor)
                 userShape.setShapeRender()
-                 shapeRender = userShape.render()
-                createSVG(shapeRender, response)
-                break;
-       
-            case "Square":
-                userShape = new Square(response.shapeColor)
-                createSVG(shapeRender, response)
                 shapeRender = userShape.render()
                 createSVG(shapeRender, response)
                 break;
 
-                case "Triangle":
-                userShape = new Triangle(response.shapeColor)
+            case "Square":
+                userShape = new Square(response.shapeColor)
+                userShape.setShapeRender()
                 shapeRender = userShape.render()
                 createSVG(shapeRender, response)
+                break;
+
+            case "Triangle":
+                userShape = new Triangle(response.shapeColor)
+                userShape.setShapeRender()
+                shapeRender = userShape.render()
                 createSVG(shapeRender, response)
                 break;
         }
     })
 }
 
-  
-function createSVG(shapeRender, response){
-    console.log (shapeRender, response)
+
+function createSVG(shapeRender, response) {
+    console.log(shapeRender, response)
     let userSvg = new SVG(response.textColor)
     userSvg.setTextRender(response.logotext)
     userSvg.setShapeRender(shapeRender)
-    fs.writeFileSync("OUTPUT.svg",userSvg.renderSVG(),(err)=>{
-        if(err) throw err
+    fs.writeFileSync("OUTPUT.svg", userSvg.renderSVG(), (err) => {
+        if (err) throw err
     })
 
     console.log("LOGO GENERATED")
 
-}   
+}
 
 init()
