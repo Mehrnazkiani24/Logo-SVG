@@ -4,3 +4,4 @@ Graphic design
 
 
 ![ScreenShot](Screenshot%202024-07-11%20at%209.02.16%20PM.png)
+![Screenshot](Screenshot%202024-07-11%20at%209.05.08%20PM.png)
